@@ -1,7 +1,58 @@
-<html>
-<head>
-    <title>Simplesafe</title>
-</head>
-<h1> BASE </h1>
+{% load static %}
 
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simplesafe</title>
+  
+  <link rel=stylesheet href="{% static 'main/css/base.css' %}">
+  {% block head %}{% endblock %}
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
+
+</head>
+<body>
+  <div class="header">
+    <h1>Simplesafe</h1>
+  </div>
+  <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
+  <label for="openSidebarMenu" class="sidebarIconToggle">
+    <div class="spinner diagonal part-1"></div>
+    <div class="spinner horizontal"></div>
+    <div class="spinner diagonal part-2"></div>
+  </label>
+  <div id="sidebarMenu">
+    <ul class="sidebarMenuInner">
+      <li>Тест</li>
+      <li>Результаты</li>
+      <li>Советы</li>
+      <li>Литература</li>
+    </ul>
+  </div>
+  <div id='center' class="main center">
+    {% block center %}{% endblock %}
+    <div class="mainInner">
+      {% block contentInner %}{% endblock %}
+    </div>
+    {% block contentOuter %}{% endblock %}
+
+  <div class="menu-icon" id="menuIcon">
+    <div class="menu-icon" id="menuIcon">
+      <img src="{% static 'main/images/dino.png' %}" alt="Иконка меню">
+  </div>
+</div>
+
+<div class="menu hidden" id="menu">
+    <ul>
+        <li><a href="#">ТЕСТ</a></li>
+        <li><a href="#">РЕЗУЛЬТАТЫ</a></li>
+        <li><a href="#">СОВЕТЫ</a></li>
+        <li><a href="#">ЛИТЕРАТУРА</a></li>
+    </ul>
+</div>
+
+<script src="{% static 'main/js/script1.js' %}"></script>
+
+</body>
 </html>

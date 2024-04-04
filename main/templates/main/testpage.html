@@ -1,0 +1,111 @@
+{%extends 'base.html'%}
+
+{%block head%}
+<link rel=stylesheet href="{% static 'main/css/testpage.css' %}">
+{%endblock%}
+
+{%block contentInner%}
+<div class="advices">
+    <div class="tile">
+        <h2>Личность</h2>
+        <p>Будьте сами собой и отвечайте честно, чтобы выяснить свой тип личности.</p>
+    </div>
+    <div class="tile">
+        <h2>Влияние</h2>
+        <p>Узнайте, как ваш тип личности влияет на многие сферы вашей жизни.</p>
+    </div>
+    <div class="tile">
+        <h2>Материалы</h2>
+        <p>Станьте тем человеком, которым хотите быть, с помощью наших дополнительных материалов премиум класса.</p>
+    </div>
+{%endblock%}
+
+{%block contentOuter%}
+<div class="quiz-container">
+    <div class="quiz-title">
+      <h2>Просить</h2>
+      
+    </div>
+    <div class="question">
+      <p>Просить, в твоем понимании - это обращаться за помощью…</p>
+      <div class="options">
+        <label>
+          <input type="radio" name="question1" value="a">
+          <span>если не справился сам(думаю, что слабый)</span>
+        </label>
+        <label>
+          <input type="radio" name="question1" value="b">
+          <span>по любому поводу, зачем делать что-то самому </span>
+        </label>
+        <label>
+          <input type="radio" name="question1" value="c">
+          <span>если не справился сам(это нормально, никто не идеален) </span>
+        </label>
+      </div>
+    </div>
+    <hr>
+    <div class="question">
+      <p>Тебе оказывать помощь, в твоем понимании- это </p>
+      <div class="options">
+        <label>
+          <input type="radio" name="question2" value="a">
+          <span>стыдно</span>
+        </label>
+        <label>
+          <input type="radio" name="question2" value="b">
+          <span>воспринимаю, как должное</span>
+        </label>
+        <label>
+          <input type="radio" name="question2" value="c">
+          <span>нормально, мне приятно</span>
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <div class="quiz-container">
+    <div class="quiz-title">
+      <h2>Отказывать</h2>
+    </div>
+    <div class="question">
+      <p>Отказывать, в твоем понимании - это…</p>
+      <div class="options">
+        <label>
+          <input type="radio" name="question1" value="a">
+          <span>чувствовать вину</span>
+        </label>
+        <label>
+          <input type="radio" name="question1" value="b">
+          <span>унижать</span>
+        </label>
+        <label>
+          <input type="radio" name="question1" value="c">
+          <span>делать выбор</span>
+        </label>
+      </div>
+    </div>
+    <hr>
+    <div class="question">
+      <p>Отказ для тебя - это…</p>
+      <div class="options">
+        <label>
+          <input type="radio" name="question2" value="a">
+          <span>стыд</span>
+        </label>
+        <label>
+          <input type="radio" name="question2" value="b">
+          <span>оскорбление</span>
+        </label>
+        <label>
+          <input type="radio" name="question2" value="c">
+          <span>нормально</span>
+        </label>
+      </div>
+    </div>
+
+    <hr>
+    <button type="submit" id="submitBtn">Отправить</button>
+    <br/>
+
+  </div>
+{%endblock%}    

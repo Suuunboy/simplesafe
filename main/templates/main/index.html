@@ -1,1 +1,21 @@
 {% extends "base.html" %}
+{% load static %}
+
+{%block head%}
+<link rel=stylesheet href="{% static 'main/css/index.css' %}">
+{%endblock%}
+
+{%block contentInner%}
+<div class="project-description">
+    <h2>«Это настолько невероятно – наконец-то быть понятым».</h2>
+    <p>Всего 10 минут, чтобы получить «шокирующе точное» описание того, кто вы и почему вы поступаете именно так.</p>
+
+    </br>
+    </br>
+    </br>
+
+    <button onclick="location.href='test.html';">Пройти тест</button>
+
+    </br>
+  </div>
+{%endblock%}
