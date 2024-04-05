@@ -1,0 +1,51 @@
+.lit-title {
+    margin-top: 100px;
+}
+
+.lit-title h1 {
+    text-align: center;
+    color: #474A51;
+}
+
+/*---------------------- ВОЗМОЖНО УБРАТЬ ТЕНЬ И ЦВЕТ ФОНА LIT-DESCRIPTION */
+
+.lit-description {
+    color: #474A51;
+    position: relative;
+    top: 10px;
+    text-align: center;
+    padding: 20px;
+    max-width: 80%;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.lit-description h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.lit-description p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.advice {
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 2px solid #7899D4; /* Цвет рамки совета */
+    border-radius: 8px;
+    background-color: #fff; /* Фон совета */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Тень совета */
+}
+
+.advice h2 {
+    color: #7899D4; /* Цвет заголовка совета */
+}
+
+.advice p {
+    color: #474A51; /* Цвет текста совета */
+}

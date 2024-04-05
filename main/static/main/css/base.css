@@ -28,8 +28,12 @@ body {
 .header h1{
     color: white;
     margin-left: 10px;
-    
 }
+
+.header h1 a {
+    color: inherit; /* Наследуем цвет текста */
+    text-decoration: none; /* Убираем подчеркивание */
+  }
 
 .main {
     margin: 0 auto;

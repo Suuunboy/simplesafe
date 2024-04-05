@@ -1,0 +1,29 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+{% block head%}
+<link rel=stylesheet href="{% static 'main/css/advices.css' %}">
+{% endblock %}
+
+{%block center%}
+<div class="lit-title">
+    <h1> Советы </h1>
+</div>
+{%endblock%}
+
+{% block contentInner %}
+<div class="lit-description">
+    <div class="advice">
+        <h2>Совет 1: Название совета</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ullamcorper eros nec turpis vestibulum, vel vestibulum nisi accumsan.</p>
+    </div>
+    <div class="advice">
+        <h2>Совет 2: Название совета</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ullamcorper eros nec turpis vestibulum, vel vestibulum nisi accumsan.</p>
+    </div>
+    <div class="advice">
+        <h2>Совет 3: Название совета</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ullamcorper eros nec turpis vestibulum, vel vestibulum nisi accumsan.</p>
+    </div>
+</div>
+{%endblock%}

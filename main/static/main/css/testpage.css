@@ -1,0 +1,146 @@
+.test-block {
+    color: #474A51;
+    position: relative;
+    top: 50px;
+    text-align: center;
+    padding: 20px;
+    max-width: 80%;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.advices {
+    display: flex;
+    flex-wrap: wrap; /* Разрешить плиткам переноситься на новую строку, если они не помещаются в одну строку */
+    justify-content: center; /* Центрировать плитки на больших экранах */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.tile {
+    margin: 10px; /* Добавить небольшие отступы между плитками */
+    color: white;
+    background-color: #B7A1FB;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 15px;
+    min-width: 100px; /* Минимальная ширина плитки */
+    max-width: 300px;
+}
+
+@media only screen and (max-width: 768px) {
+    .advices {
+        flex-direction: column; /* Стек плиток вертикально на маленьких экранах */
+        align-items: center; /* Центрировать плитки по горизонтали на маленьких экранах */
+    }
+}
+
+.tile h2 {
+    margin-top: 0;
+    font-size: 20px; /* Уменьшить размер заголовка для лучшего отображения на маленьких экранах */
+}
+
+.tile p {
+    margin-bottom: 0;
+    font-size: 16px; /* Уменьшить размер текста для лучшего отображения на маленьких экранах */
+}
+
+
+
+.tile:last-child {
+    margin-right: 0; /* Убрать правый отступ для последней плитки */
+}
+
+
+.test-title {
+    margin-top: 100px;
+}
+
+.test-title h1 {
+    text-align: center;
+    color: #474A51;
+}
+
+
+.quiz-container {
+    color: #474A51;
+    margin-top: 20px;
+    background-color: #f9f9f9;
+    /* border-color: #1a1a1a;
+    border-style: solid;
+    border-radius: 8px; */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .quiz-title {
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  
+  .question {
+    margin-bottom: 20px;
+  }
+  
+  .question p {
+    font-weight: normal;
+    font-size: 25px;
+  }
+  
+  .options {
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .options label {
+    margin-bottom: 20px;
+  }
+  
+  .options input[type="radio"] {
+    display: none;
+  }
+  
+  .options span {
+    cursor: pointer;
+    padding: 5px 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  
+  .options span:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .options input[type="radio"]:checked + span {
+    background-color: #B7A1FB;
+    color: white;
+  }
+  
+  .options input[type="radio"]:checked + span::before {
+    content: '\2022';
+    font-size: 20px;
+    margin-right: 8px;
+  }
+
+  #submitBtn {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    width: 20%;
+    height: 70px;
+    background-color: #B7A1FB;
+    border-radius: 8px;
+    border: none;
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#submitBtn:hover {
+    background-color: #7899D4;
+}
