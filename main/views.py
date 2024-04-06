@@ -14,3 +14,6 @@ def advices(request):
 
 def materials(request):
     return render(request, 'materials.html', {})
+
+def results(request):
+    return render(request,'results.html', {})
