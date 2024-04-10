@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Track
 
 
 def index(request):
@@ -13,7 +14,8 @@ def advices(request):
     return render(request, 'advices.html', {})
 
 def materials(request):
-    return render(request, 'materials.html', {})
+    tracks = Track.objects.all()
+    return render(request, 'materials.html', {'tracks': tracks})
 
 def results(request):
     return render(request,'results.html', {})

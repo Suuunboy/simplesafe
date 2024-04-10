@@ -1,1 +1,18 @@
 {% extends "main/base.html" %}
+{% load static %}
+{% block head %}
+<link rel=stylesheet href="{% static 'main/css/materials.css' %}">
+{% endblock %}
+
+{% block contentInner %}
+<div class="materials-description">
+{% for track in tracks %}
+    <h2>{{ track.title }}</h2>
+    <p>Артист: {{ track.artist }}</p>
+    <audio controls preload="metadata">
+        <source src="{{ track.audio_file.url }}" type="audio/mpeg">
+        Ваш браузер не поддерживает аудио элемент.
+    </audio>
+{%endfor%}
+</div>
+{% endblock %}
