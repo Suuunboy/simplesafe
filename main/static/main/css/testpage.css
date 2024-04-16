@@ -18,6 +18,7 @@
     max-width: 1200px;
     margin: 0 auto;
     padding: 10px;
+    margin-bottom: 0;
 }
 
 .tile {
@@ -143,4 +144,9 @@
 
 #submitBtn:hover {
     background-color: #7899D4;
+}
+
+form {
+  text-align: center; /* Центрируем содержимое формы по горизонтали */
+  margin-top: 50px; /* Уменьшаем верхний отступ формы */
 }

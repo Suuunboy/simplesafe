@@ -1,39 +1,38 @@
-{%extends 'base.html'%}
+{% extends 'base.html' %}
 {% load static %}
 
-{%block head%}
-<link rel=stylesheet href="{% static 'main/css/testpage.css' %}">
-{%endblock%}
+{% block head %}
+<link rel="stylesheet" href="{% static 'main/css/testpage.css' %}">
+{% endblock %}
 
-{%block center%}
+{% block center %}
 <div class="test-title">
   <h1> Психологический тест </h1>
-  </div>
-{%endblock%}
+</div>
+{% endblock %}
 
 
-{%block contentInner%}
+{% block contentInner %}
 <div class="advices">
-    <div class="tile">
-        <h2>Личность</h2>
-        <p>Будьте сами собой и отвечайте честно, чтобы выяснить свой тип личности.</p>
-    </div>
-    <div class="tile">
-        <h2>Влияние</h2>
-        <p>Узнайте, как ваш тип личности влияет на многие сферы вашей жизни.</p>
-    </div>
-    <div class="tile">
-        <h2>Материалы</h2>
-        <p>Станьте тем человеком, которым хотите быть, с помощью наших дополнительных материалов премиум класса.</p>
-    </div>
-{%endblock%}
+  <div class="tile">
+    <h2>Личность</h2>
+    <p>Будьте сами собой и отвечайте честно, чтобы выяснить свой тип личности.</p>
+  </div>
+  <div class="tile">
+    <h2>Влияние</h2>
+    <p>Узнайте, как ваш тип личности влияет на многие сферы вашей жизни.</p>
+  </div>
+  <div class="tile">
+    <h2>Материалы</h2>
+    <p>Станьте тем человеком, которым хотите быть, с помощью наших дополнительных материалов премиум класса.</p>
+  </div>
+</div>
 
-{%block contentOuter%}
-
-<div class="quiz-container">
+<form method="post">
+  {% csrf_token %}
+  <div class="quiz-container">
     <div class="quiz-title">
       <h2>Просить</h2>
-      
     </div>
     <div class="question">
       <p>Просить, в твоем понимании - это обращаться за помощью…</p>
@@ -44,17 +43,17 @@
         </label>
         <label>
           <input type="radio" name="question1" value="b">
-          <span>по любому поводу, зачем делать что-то самому </span>
+          <span>по любому поводу, зачем делать что-то самому</span>
         </label>
         <label>
           <input type="radio" name="question1" value="c">
-          <span>если не справился сам(это нормально, никто не идеален) </span>
+          <span>если не справился сам(это нормально, никто не идеален)</span>
         </label>
       </div>
     </div>
     <hr>
     <div class="question">
-      <p>Тебе оказывать помощь, в твоем понимании- это </p>
+      <p>Тебе оказывать помощь, в твоем понимании- это</p>
       <div class="options">
         <label>
           <input type="radio" name="question2" value="a">
@@ -80,15 +79,15 @@
       <p>Отказывать, в твоем понимании - это…</p>
       <div class="options">
         <label>
-          <input type="radio" name="question1" value="a">
+          <input type="radio" name="question3" value="a">
           <span>чувствовать вину</span>
         </label>
         <label>
-          <input type="radio" name="question1" value="b">
+          <input type="radio" name="question3" value="b">
           <span>унижать</span>
         </label>
         <label>
-          <input type="radio" name="question1" value="c">
+          <input type="radio" name="question3" value="c">
           <span>делать выбор</span>
         </label>
       </div>
@@ -98,15 +97,15 @@
       <p>Отказ для тебя - это…</p>
       <div class="options">
         <label>
-          <input type="radio" name="question2" value="a">
+          <input type="radio" name="question4" value="a">
           <span>стыд</span>
         </label>
         <label>
-          <input type="radio" name="question2" value="b">
+          <input type="radio" name="question4" value="b">
           <span>оскорбление</span>
         </label>
         <label>
-          <input type="radio" name="question2" value="c">
+          <input type="radio" name="question4" value="c">
           <span>нормально</span>
         </label>
       </div>
@@ -115,6 +114,8 @@
     <hr>
     <button type="submit" id="submitBtn">Отправить</button>
     <br/>
-
   </div>
-{%endblock%}    
+</form>
+
+{% endblock %}
+
