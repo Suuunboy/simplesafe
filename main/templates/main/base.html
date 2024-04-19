@@ -30,6 +30,14 @@
       <li><a href="{% url 'materials' %}">Литература</a></li>
     </ul>
   </div>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+      $(document).ready(function(){
+          $('#sidebarMenu .sidebarMenuInner li').click(function(){
+              window.location = $(this).find('a').attr('href');
+          });
+      });
+  </script>
   <div id='center' class="main center">
     {% block center %}{% endblock %}
     <div class="mainInner">
@@ -45,11 +53,20 @@
 
 <div class="menu hidden" id="menu">
     <ul>
-        <li><a href="{% url 'testpage' %}">ТЕСТ</a></li>
-        <li><a href="{% url 'results' %}">РЕЗУЛЬТАТЫ</a></li>
-        <li><a href="{% url 'advices' %}">СОВЕТЫ</a></li>
-        <li><a href="{% url 'materials' %}">ЛИТЕРАТУРА</a></li>
-    </ul>
+      <li><a href="{% url 'testpage' %}">ТЕСТ</a></li>
+      <li><a href="{% url 'results' %}">РЕЗУЛЬТАТЫ</a></li>
+      <li><a href="{% url 'advices' %}">СОВЕТЫ</a></li>
+      <li><a href="{% url 'materials' %}">ЛИТЕРАТУРА</a></li>
+  </ul>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+      $(document).ready(function(){
+          $('#menu li').click(function(){
+              window.location = $(this).find('a').attr('href');
+          });
+      });
+  </script>
+
 </div>
 
 <script src="{% static 'main/js/script1.js' %}"></script>

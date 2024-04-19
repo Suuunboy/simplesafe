@@ -12,3 +12,28 @@ class LiteratureLinks(models.Model):
 
     def __str__(self):
         return self.title
+    
+
+class Question(models.Model):
+    CHOICES = (
+        ('please', 'Просить'),
+        ('refuse', 'Отказывать'),
+        ('conflict', 'Конфликтовать'),
+        ('opinion', 'Выражать мнение'),
+        ('praise', 'Хвалить'),
+        ('critisize', 'Критиковать'),
+    )
+    question = models.CharField(max_length=100)
+    type = models.CharField(max_length=100, choices=CHOICES)
+
+    def __str__(self):
+        return self.question
+
+class Choice(models.Model):
+    question = models.ForeignKey(Question, on_delete=models.CASCADE)
+    choice_text = models.CharField(max_length=200)
+    is_correct = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.choice_text
+    

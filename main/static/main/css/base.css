@@ -225,7 +225,10 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
 .menu li {
     padding: 15px;
     border-bottom: 1px solid #ccc;
+    cursor: pointer;
 }
+
+
 
 .menu li:last-child {
     border-bottom: none;

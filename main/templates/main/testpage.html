@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load custom_tags %}
 
 {% block head %}
 <link rel="stylesheet" href="{% static 'main/css/testpage.css' %}">
@@ -31,25 +32,27 @@
 <form method="post">
   {% csrf_token %}
   <div class="quiz-container">
+    <p>{{all_questions}}</p>
+    {%for key in all_questions.keys%}
     <div class="quiz-title">
-      <h2>Просить</h2>
+      <h2>{{key}}</h2>
     </div>
+    
+    {% for question in all_questions|get_item:key %}
+    {% for innerkey in question.keys %}
     <div class="question">
-      <h3>Просить, в твоем понимании - это обращаться за помощью…</h3>
+      <h3>{{innerkey}}</h3>
+      {% for answer in question|get_item:innerkey %}
       <div class="answer-option">
-        <input type="radio" id="answer1" name="question1" value="pop">
-        <label for="answer1">если не справился сам(думаю, что слабый)</label>
+        <input type="radio" id={{answer.id}} name="{{innerkey.type}}question{{innerkey.id}}" value={{answer.id}}>
+        <label for={{answer.id}}>{{answer.choice_text}}</label>
       </div>
-      <div class="answer-option">
-        <input type="radio" id="answer2" name="question1" value="rock">
-        <label for="answer2">по любому поводу, зачем делать что-то самому</label>
-      </div>
-      <div class="answer-option">
-        <input type="radio" id="answer3" name="question1" value="jazz">
-        <label for="answer3">если не справился сам(это нормально, никто не идеален)</label>
-      </div>
+      {%endfor%}
     </div>
+    {% endfor%}
+    {% endfor%}
     <hr>
+    {% endfor %}
     <button type="submit" id="submitBtn">Отправить</button>
     <br/>
   </div>
