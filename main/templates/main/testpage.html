@@ -35,82 +35,20 @@
       <h2>Просить</h2>
     </div>
     <div class="question">
-      <p>Просить, в твоем понимании - это обращаться за помощью…</p>
-      <div class="options">
-        <label>
-          <input type="radio" name="question1" value="a">
-          <span>если не справился сам(думаю, что слабый)</span>
-        </label>
-        <label>
-          <input type="radio" name="question1" value="b">
-          <span>по любому поводу, зачем делать что-то самому</span>
-        </label>
-        <label>
-          <input type="radio" name="question1" value="c">
-          <span>если не справился сам(это нормально, никто не идеален)</span>
-        </label>
+      <h3>Просить, в твоем понимании - это обращаться за помощью…</h3>
+      <div class="answer-option">
+        <input type="radio" id="answer1" name="question1" value="pop">
+        <label for="answer1">если не справился сам(думаю, что слабый)</label>
+      </div>
+      <div class="answer-option">
+        <input type="radio" id="answer2" name="question1" value="rock">
+        <label for="answer2">по любому поводу, зачем делать что-то самому</label>
+      </div>
+      <div class="answer-option">
+        <input type="radio" id="answer3" name="question1" value="jazz">
+        <label for="answer3">если не справился сам(это нормально, никто не идеален)</label>
       </div>
     </div>
-    <hr>
-    <div class="question">
-      <p>Тебе оказывать помощь, в твоем понимании- это</p>
-      <div class="options">
-        <label>
-          <input type="radio" name="question2" value="a">
-          <span>стыдно</span>
-        </label>
-        <label>
-          <input type="radio" name="question2" value="b">
-          <span>воспринимаю, как должное</span>
-        </label>
-        <label>
-          <input type="radio" name="question2" value="c">
-          <span>нормально, мне приятно</span>
-        </label>
-      </div>
-    </div>
-  </div>
-
-  <div class="quiz-container">
-    <div class="quiz-title">
-      <h2>Отказывать</h2>
-    </div>
-    <div class="question">
-      <p>Отказывать, в твоем понимании - это…</p>
-      <div class="options">
-        <label>
-          <input type="radio" name="question3" value="a">
-          <span>чувствовать вину</span>
-        </label>
-        <label>
-          <input type="radio" name="question3" value="b">
-          <span>унижать</span>
-        </label>
-        <label>
-          <input type="radio" name="question3" value="c">
-          <span>делать выбор</span>
-        </label>
-      </div>
-    </div>
-    <hr>
-    <div class="question">
-      <p>Отказ для тебя - это…</p>
-      <div class="options">
-        <label>
-          <input type="radio" name="question4" value="a">
-          <span>стыд</span>
-        </label>
-        <label>
-          <input type="radio" name="question4" value="b">
-          <span>оскорбление</span>
-        </label>
-        <label>
-          <input type="radio" name="question4" value="c">
-          <span>нормально</span>
-        </label>
-      </div>
-    </div>
-
     <hr>
     <button type="submit" id="submitBtn">Отправить</button>
     <br/>
@@ -118,4 +56,3 @@
 </form>
 
 {% endblock %}
-

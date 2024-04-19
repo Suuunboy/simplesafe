@@ -4,15 +4,22 @@
 <link rel=stylesheet href="{% static 'main/css/materials.css' %}">
 {% endblock %}
 
+{% block center %}
+<div class="mat-title">
+  <h1> Литература </h1>
+</div>
+{% endblock %}
+
 {% block contentInner %}
 <div class="materials-description">
-{% for track in tracks %}
-    <h2>{{ track.title }}</h2>
-    <p>Артист: {{ track.artist }}</p>
-    <audio controls preload="metadata">
-        <source src="{{ track.audio_file.url }}" type="audio/mpeg">
-        Ваш браузер не поддерживает аудио элемент.
-    </audio>
-{%endfor%}
+    
+    {% for link in links%}
+        <h3> {{link.id}}.
+        <a href={{link.link}}>{{link.title}}</a>
+        </h3>
+        <br>
+        
+    {% endfor %}
+    
 </div>
 {% endblock %}

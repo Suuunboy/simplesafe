@@ -48,4 +48,5 @@
 
 .advice p {
     color: #474A51; /* Цвет текста совета */
+    text-align: left;
 }

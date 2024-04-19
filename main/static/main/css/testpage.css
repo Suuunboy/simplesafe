@@ -70,9 +70,6 @@
     color: #474A51;
     margin-top: 20px;
     background-color: #f9f9f9;
-    /* border-color: #1a1a1a;
-    border-style: solid;
-    border-radius: 8px; */
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
@@ -83,51 +80,6 @@
     text-align: left;
   }
   
-  .question {
-    margin-bottom: 20px;
-  }
-  
-  .question p {
-    font-weight: normal;
-    font-size: 25px;
-  }
-  
-  .options {
-    font-size: 20px;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .options label {
-    margin-bottom: 20px;
-  }
-  
-  .options input[type="radio"] {
-    display: none;
-  }
-  
-  .options span {
-    cursor: pointer;
-    padding: 5px 12px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-  }
-  
-  .options span:hover {
-    background-color: #e0e0e0;
-  }
-  
-  .options input[type="radio"]:checked + span {
-    background-color: #B7A1FB;
-    color: white;
-  }
-  
-  .options input[type="radio"]:checked + span::before {
-    content: '\2022';
-    font-size: 20px;
-    margin-right: 8px;
-  }
-
   #submitBtn {
     margin-top: 40px;
     margin-bottom: 40px;
@@ -142,11 +94,54 @@
     cursor: pointer;
 }
 
+@media screen and (max-width: 768px) {
+  #submitBtn {
+      width: 40%; 
+  }
+}
+
 #submitBtn:hover {
     background-color: #7899D4;
 }
 
 form {
-  text-align: center; /* Центрируем содержимое формы по горизонтали */
-  margin-top: 50px; /* Уменьшаем верхний отступ формы */
+  text-align: center; 
+  margin-top: 50px;
 }
+
+.question {
+  margin-bottom: 20px;
+}
+
+.question h3 {
+  margin-top: 0;
+}
+
+.answer-option {
+  margin-bottom: 10px;
+}
+
+.answer-option input[type="radio"] {
+  display: none; /* Скрыть стандартный радио-инпут */
+}
+
+.answer-option label {
+  display: inline-block;
+  cursor: pointer;
+  padding: 10px 20px;
+  /* border: 2px solid #B7A1FB; */
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  color: #474A51;
+}
+
+.answer-option label:hover {
+  background-color: #eeeeee;
+  /* color: white; */
+}
+
+.answer-option input[type="radio"]:checked + label {
+  background-color: #A1B8FB;
+  color: white;
+}
+

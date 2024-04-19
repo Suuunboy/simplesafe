@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import Track
+from .models import Track, LiteratureLinks
 from django.shortcuts import redirect
 from django.urls import reverse
 
@@ -15,19 +15,20 @@ def testpage(request):
         # selected_option = request.POST.get('question1')
         request.session['selected_options'] = selected_options
         return redirect('result')  
-    return render(request, 'testpage.html', {})
+    return render(request, 'testpage.html')
 
 
 def advices(request):
     return render(request, 'advices.html', {})
 
 def materials(request):
-    tracks = Track.objects.all()
-    return render(request, 'materials.html', {'tracks': tracks})
+    links = LiteratureLinks.objects.all()
+    return render(request, 'materials.html', {'links': links})
 
 def result(request):
     selected_options = request.session.get('selected_options')
-    return render(request, 'result.html', {'selected_options': selected_options})
+    counter = 0
+    return render(request, 'result.html', {'selected_options': selected_options, 'counter': counter})
 
 def results(request):
     return render(request,'results.html', {})
