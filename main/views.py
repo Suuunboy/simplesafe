@@ -13,14 +13,31 @@ def fill_question_list(type_questions):
     return questions_list
 
 
+def count_percent(request, type):
+    data = request.session.get(f'{type}_options')
+    return int(sum(data)/len(data) * 100)
+
+def remember_to_session(type, request):
+    res = []
+    for id in Question.objects.filter(type=type).values_list('id', flat=True):
+        res.append(Choice.objects.filter(id=request.POST.get(f'{type}question{id}')).first().is_correct)
+    request.session[f'{type}_options'] = res
+
 def index(request):
     return render(request, 'index.html', {})
 
 def testpage(request):
     if request.method == 'POST':
-        selected_options = [request.POST.get(f'pleasequestion{x}') for x in range(1, 5)] 
-        # selected_option = request.POST.get('question1')
-        request.session['selected_options'] = selected_options
+       
+
+        remember_to_session('please', request)
+        remember_to_session('refuse', request)
+        remember_to_session('conflict', request)
+        remember_to_session('opinion', request)
+        remember_to_session('praise', request)
+        remember_to_session('critisize', request)
+
+
         return redirect('result')  
     else:
         please_questions = Question.objects.filter(type='please')
@@ -67,11 +84,14 @@ def materials(request):
     return render(request, 'materials.html', {'links': links})
 
 def result(request):
-    selected_options = request.session.get('selected_options')
-    counter = 0
-    return render(request, 'result.html', {'selected_options': selected_options, 'counter': counter})
+    please_percent = count_percent(request, 'please')
+    refuse_percent = count_percent(request, 'refuse')
+    conflict_percent = count_percent(request, 'conflict')
+    opinion_percent = count_percent(request, 'opinion')
+    praise_percent = count_percent(request, 'praise')
+    critisize_percent = count_percent(request, 'critisize')
+    data = request.session.get('opinion_options')
+    return render(request, 'result.html', {'please_percent': please_percent,'refuse_percent':refuse_percent, 'conflict_percent': conflict_percent ,'opinion_percent': opinion_percent,'praise_percent':praise_percent ,'critisize_percent':critisize_percent, 'data': data})
 
-def results(request):
-    return render(request,'results.html', {})
 
 

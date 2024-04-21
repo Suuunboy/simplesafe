@@ -29,10 +29,10 @@
   </div>
 </div>
 
-<form method="post">
+<form id="quizForm" method="post" onsubmit="return validateForm()">
   {% csrf_token %}
   <div class="quiz-container">
-    <p>{{all_questions}}</p>
+    {% comment %} <p>{{all_questions}}</p> {% endcomment %}
     {%for key in all_questions.keys%}
     <div class="quiz-title">
       <h2>{{key}}</h2>
@@ -57,5 +57,5 @@
     <br/>
   </div>
 </form>
-
+<script src="{% static 'main/js/validation.js' %}"></script>
 {% endblock %}

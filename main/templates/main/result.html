@@ -1,7 +1,79 @@
 {% extends "main/base.html" %}
 {% load static %}
 
+{% block head %}
+<link rel="stylesheet" href="{% static 'main/css/result.css' %}">
+{% endblock %}
+
+{% block center %}
+<div class="result-title">
+    <h1>Ваши результаты</h1>
+</div>
+{% endblock%}
 
 {%block contentInner%}
-<h1>Selected option: {{ selected_options }}</h1>
+<div class="result-description">
+    <h1>Просить: </h1>
+    {% comment %} <p> {{data}} <p> {% endcomment %}
+    <div class="result-unit">
+        <div class="pie animate" style="--p:{{ please_percent }};--c:#8EFAA9"> {{ please_percent }}%</div>
+        {% if please_percent >= 50 %}
+        <h3>Вы умеете просить.</h3>
+        {%endif%}
+        {% if please_percent < 50 %}
+        <h3>Вы не умеете просить.</h3>
+        {%endif%}
+    </div>
+    <h1>Отказывать: </h1>
+    <div class="result-unit">
+        <div class="pie animate" style="--p:{{ refuse_percent }};--c:#FADF8E"> {{ refuse_percent }}%</div>
+        {% if refuse_percent >= 50 %}
+        <h3>Вы умеете отказывать.</h3>
+        {%endif%}
+        {% if refuse_percent < 50 %}
+        <h3>Вы не умеете отказывать.</h3>
+        {%endif%}
+    </div>
+    <h1>Конфликтовать: </h1>
+    <div class="result-unit">
+        <div class="pie animate" style="--p:{{ conflict_percent }};--c:#FA8EE0"> {{ conflict_percent }}%</div>
+        {% if conflict_percent >= 50 %}
+        <h3>Вы умеете конфликтовать.</h3>
+        {%endif%}
+        {% if conflict_percent < 50 %}
+        <h3>Вы не умеете конфликтовать.</h3>
+        {%endif%}
+    </div>
+    <h1>Выражать мнение: </h1>
+    <div class="result-unit">
+        <div class="pie animate" style="--p:{{ opinion_percent }};--c:#8EDFFA"> {{ opinion_percent }}%</div>
+        {% if opinion_percent >= 50 %}
+        <h3>Вы умеете выражать свое мнение.</h3>
+        {%endif%}
+        {% if opinion_percent < 50 %}
+        <h3>Вы не умеете выражать свое мнение.</h3>
+        {%endif%}
+    </div>
+    <h1>Хвалить: </h1>
+    <div class="result-unit">
+        <div class="pie animate" style="--p:{{ praise_percent }};--c:#FAA98E"> {{ praise_percent }}%</div>
+        {% if praise_percent >= 50 %}
+        <h3>Вы умеете хвалить.</h3>
+        {%endif%}
+        {% if praise_percent < 50 %}
+        <h3>Вы не умеете хвалить.</h3>
+        {%endif%}
+    </div>
+    <h1>Критиковать: </h1>
+    <div class="result-unit">
+        <div class="pie animate" style="--p:{{critisize_percent }};--c:#8EFAA9"> {{ critisize_percent }}%</div>
+        {% if critisize_percent >= 50 %}
+        <h3>Вы умеете критиковать.</h3>
+        {%endif%}
+        {% if critisize_percent < 50 %}
+        <h3>Вы не умеете критиковать.</h3>
+        {%endif%}
+    </div>
+</div>
+
 {%endblock%}

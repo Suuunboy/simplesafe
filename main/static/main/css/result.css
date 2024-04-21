@@ -1,0 +1,115 @@
+.result-description {
+    color: #474A51;
+    position: relative;
+    top: 50px;
+    text-align: center;
+    padding: 20px;
+    max-width: 80%;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.result-description h1{
+    text-align: left;
+}
+
+
+@property --p{
+    syntax: '<number>';
+    inherits: true;
+    initial-value: 0;
+  }
+  
+  .pie {
+    --p:20;
+    --b:22px;
+    --c:darkred;
+    --w:150px;
+    
+    width:var(--w);
+    aspect-ratio:1;
+    position:relative;
+    display:inline-grid;
+    margin:5px;
+    place-content:center;
+    font-size:25px;
+    font-weight:bold;
+    font-family:sans-serif;
+
+  }
+  .pie:before,
+  .pie:after {
+    content:"";
+    position:absolute;
+    border-radius:50%;
+  }
+  .pie:before {
+    inset:0;
+    background:
+      radial-gradient(farthest-side,var(--c) 98%,#0000) top/var(--b) var(--b) no-repeat,
+      conic-gradient(var(--c) calc(var(--p)*1%),#0000 0);
+    -webkit-mask:radial-gradient(farthest-side,#0000 calc(99% - var(--b)),#000 calc(100% - var(--b)));
+            mask:radial-gradient(farthest-side,#0000 calc(99% - var(--b)),#000 calc(100% - var(--b)));
+  }
+  .pie:after {
+    inset:calc(50% - var(--b)/2);
+    background:var(--c);
+    transform:rotate(calc(var(--p)*3.6deg)) translateY(calc(50% - var(--w)/2));
+  }
+  .animate {
+    animation:p 1s .5s both;
+  }
+  .no-round:before {
+    background-size:0 0,auto;
+  }
+  .no-round:after {
+    content:none;
+  }
+  @keyframes p {
+    from{--p:0}
+  }
+  
+  body {
+    background:#f2f2f2;
+  }
+
+.result-title {
+    margin-top: 100px;
+}
+
+.result-title h1 {
+    text-align: center;
+    color: #474A51;
+}
+
+
+
+
+/* для больших экранов */
+@media screen and (min-width: 768px) {
+    .result-unit {
+        display: flex;
+        flex-wrap: nowrap; 
+        align-items: center;
+    }
+
+    .pie {
+        margin-left: 150px;
+    }
+
+    .result-unit h3 {
+    margin-left: 50px;
+    }
+  }
+
+/* для маленьких экранов */
+@media screen and (max-width: 768px) {
+    .result-unit {
+        text-align: center;
+      }
+  }
+
+
+ 
