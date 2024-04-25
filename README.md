@@ -1,4 +1,4 @@
-# Психологический сайт
+# Сайт о психологии - сейфплейс
 
 <p align="center">
    <img src="https://img.shields.io/badge/python-3.11-green" alt="Python Version">
